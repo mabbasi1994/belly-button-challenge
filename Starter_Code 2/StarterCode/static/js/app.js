@@ -6,7 +6,6 @@ d3.json(url).then(function(data) {
   console.log(data);
 });
 
-//  
 function init() {
 
     //D3 to select the dropdown menu
@@ -33,19 +32,13 @@ function init() {
 };
 
 function buildMetadata(sample) {
-
-
     d3.json(url).then((data) => {
-
-       
         let metadata = data.metadata;
         let value = metadata.filter(result => result.id == sample);
         console.log(value)
 
         let valueData = value[0];
         d3.select("#sample-metadata").html("");
-
-
         Object.entries(valueData).forEach(([key,value]) => {
             console.log(key,value);
 
